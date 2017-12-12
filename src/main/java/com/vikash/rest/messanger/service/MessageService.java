@@ -7,5 +7,6 @@ import com.vikash.rest.messanger.modal.Message;
 public interface MessageService {
 
 	List<Message> getMessages();
+	Message getMessage(long msgId);
 
 }

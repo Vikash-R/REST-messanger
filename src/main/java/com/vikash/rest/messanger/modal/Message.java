@@ -5,6 +5,7 @@ package com.vikash.rest.messanger.modal;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -12,9 +13,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  */
 @XmlRootElement
+
 public class Message {
 	
-	private int id;
+	private long id;
 	private String mssg;
 	private String author;
 	private Date createdOn;
@@ -23,7 +25,7 @@ public class Message {
 		super();
 	}
 
-	public Message(int id, String mssg, String author) {
+	public Message(long id, String mssg, String author) {
 		super();
 		this.id = id;
 		this.mssg = mssg;
@@ -31,14 +33,16 @@ public class Message {
 		this.createdOn = new Date();
 	}
 
-	public int getId() {
+	@XmlElement
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
+	@XmlElement
 	public String getMssg() {
 		return mssg;
 	}
@@ -47,6 +51,7 @@ public class Message {
 		this.mssg = mssg;
 	}
 
+	@XmlElement
 	public String getAuthor() {
 		return author;
 	}
@@ -55,6 +60,7 @@ public class Message {
 		this.author = author;
 	}
 
+	@XmlElement(name="date")
 	public Date getCreatedOn() {
 		return createdOn;
 	}
