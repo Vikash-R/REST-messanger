@@ -8,5 +8,6 @@ public interface MessageService {
 
 	List<Message> getMessages();
 	Message getMessage(long msgId);
+	long createMessage(Message msg);
 
 }

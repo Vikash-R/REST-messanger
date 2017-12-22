@@ -20,6 +20,16 @@ public class MessageServiceImpl implements MessageService {
 	public Message getMessage(long msgId) {
 		return DatabaseClass.getMessage(msgId);
 	}
+
+	@Override
+	public long createMessage(Message msg) {
+		return DatabaseClass.createMeessage(msg);
+	}
+
+	@Override
+	public Message updateMessage(Message msg) {
+		return DatabaseClass.updateMeessage(msg);
+	}
 	
 
 }
