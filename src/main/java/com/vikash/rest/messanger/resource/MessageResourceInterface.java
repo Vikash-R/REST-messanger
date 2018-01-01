@@ -33,7 +33,7 @@ public interface MessageResourceInterface {
 	@Path("/{mssgId: \\d+}")
 	@Consumes({MediaType.APPLICATION_JSON})
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
-	Message updateMessage(long mssgId,Message msg);
+	Message updateMessage(@PathParam("mssgId")long mssgId,Message msg);
 
 
 }
