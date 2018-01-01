@@ -22,7 +22,7 @@ public class MessageServiceImpl implements MessageService {
 	}
 
 	@Override
-	public long createMessage(Message msg) {
+	public Message createMessage(Message msg) {
 		return DatabaseClass.createMeessage(msg);
 	}
 

@@ -3,6 +3,7 @@ package com.vikash.rest.messanger.resource;
 import java.util.List;
 
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 
 import com.vikash.rest.messanger.modal.Message;
 import com.vikash.rest.messanger.service.MessageService;
@@ -34,7 +35,16 @@ public class MessageResource implements MessageResourceInterface {
 	 * @see com.vikash.rest.messanger.resource.MessageResourceInterface#createMessage(com.vikash.rest.messanger.modal.Message)
 	 */
 	@Override
-	public long createMessage(Message msg){
+	public Message createMessage(Message msg){
 		return mssgService.createMessage(msg);
 	}
+
+
+	@Override
+	public Message updateMessage(@PathParam("mssgId")long mssgId, Message msg) {
+		msg.setId(mssgId);
+		return mssgService.updateMessage(msg);
+	}
+
+
 }

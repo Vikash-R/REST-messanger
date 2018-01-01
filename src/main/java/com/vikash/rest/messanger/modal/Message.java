@@ -3,6 +3,7 @@
  */
 package com.vikash.rest.messanger.modal;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -13,9 +14,12 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  */
 @XmlRootElement
-
-public class Message {
+public class Message implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private long id;
 	private String mssg;
 	private String author;
@@ -65,8 +69,8 @@ public class Message {
 		return createdOn;
 	}
 
-	public void setCreatedOn(Date createdOn) {
-		this.createdOn = createdOn;
+	public void setCreatedOn(Date localDateTime) {
+		this.createdOn = localDateTime;
 	}
 	
 }
