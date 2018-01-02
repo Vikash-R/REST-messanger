@@ -30,6 +30,9 @@ public class DatabaseClass {
 	}
 	
 	public static Message createMeessage(Message msg){
+		if(messages.isEmpty()){
+			mssgId=0;
+		}
 		msg.setId(++mssgId);
 		msg.setCreatedOn(new Date());
 		messages.put(new Long(msg.getId()), msg);
@@ -41,6 +44,11 @@ public class DatabaseClass {
 		msg.setCreatedOn(new Date());
 		messages.put(new Long(msg.getId()), msg);
 		return msg;
+	}
+
+
+	public static void deleteMessage(long mssgId) {
+		messages.remove(mssgId);
 	}
 	
 

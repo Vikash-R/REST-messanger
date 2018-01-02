@@ -10,5 +10,6 @@ public interface MessageService {
 	Message getMessage(long msgId);
 	Message createMessage(Message msg);
 	Message updateMessage(Message msg);
+	void removeMessage(long mssgId);
 
 }

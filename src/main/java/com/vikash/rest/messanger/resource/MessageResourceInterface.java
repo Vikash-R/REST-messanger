@@ -3,6 +3,7 @@ package com.vikash.rest.messanger.resource;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -34,6 +35,13 @@ public interface MessageResourceInterface {
 	@Consumes({MediaType.APPLICATION_JSON})
 	@Produces({MediaType.APPLICATION_XML,MediaType.APPLICATION_JSON})
 	Message updateMessage(@PathParam("mssgId")long mssgId,Message msg);
+	
+	@DELETE
+	@Path("/{mssgId: \\d+}")
+	@Produces({MediaType.APPLICATION_JSON})
+	default void deleteMessage(@PathParam("mssgId")long mssgId){
+		
+	}
 
 
 }

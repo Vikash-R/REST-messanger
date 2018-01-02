@@ -30,6 +30,12 @@ public class MessageServiceImpl implements MessageService {
 	public Message updateMessage(Message msg) {
 		return DatabaseClass.updateMeessage(msg);
 	}
+
+	@Override
+	public void removeMessage(long mssgId) {
+		DatabaseClass.deleteMessage(mssgId);
+		
+	}
 	
 
 }

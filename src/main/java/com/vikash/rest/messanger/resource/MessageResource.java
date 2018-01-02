@@ -44,6 +44,11 @@ public class MessageResource implements MessageResourceInterface {
 		msg.setId(mssgId);
 		return mssgService.updateMessage(msg);
 	}
+	
+	@Override
+	public void deleteMessage(long mssgId){
+		mssgService.removeMessage(mssgId);
+	}
 
 
 }
